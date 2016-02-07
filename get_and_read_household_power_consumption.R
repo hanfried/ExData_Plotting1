@@ -27,3 +27,8 @@ hpc <- subset(household_power_consumption,Date == '1/2/2007' | Date == '2/2/2007
 
 dim(hpc)  # [1] 2880    9
 head(hpc)
+
+# Converting Date + Time-Strings into a timestamp
+library(lubridate)
+Sys.setlocale("LC_ALL","en_US.UTF-8")
+hpc$Timestamp = dmy_hms(paste(hpc$Date,hpc$Time))
