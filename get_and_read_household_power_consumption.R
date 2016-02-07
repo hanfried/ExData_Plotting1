@@ -13,7 +13,8 @@ if (!file.exists(dataset_txt_fname)) {
 
 # Read the data if necessary,
 if (!exists("household_power_consumption")) {
-  household_power_consumption <- read.csv(dataset_txt_fname,sep = ";",na.strings = "?")
+  household_power_consumption <- 
+    read.csv(dataset_txt_fname,sep = ";", na.strings = "?", stringsAsFactors=FALSE)
 }
 
 # Check the data
